@@ -55,6 +55,11 @@ main = do
   print $ bros |-| father
   -- output: QGenos EXIST [[Genos [A,B]],[Genos [B,B]],[Genos [B,O]]]
 
+  let bros = QGenos ALL [[Genos [A, B]], [Genos [A, O]], [Genos [B, O]], [Genos [O, O]]]
+  let father = QGenos ALL [[Genos [A, O]]]
+  print $ bros |-| father
+  -- output: QGenos EXIST [[Genos [B,O]]]
+
   let bros = QGenos ALL [[Genos [A, A]], [Genos [O, O]]]
   let m_mom = QGenos ALL [[Genos [A, A]]]
   let f_dad = QGenos ALL [[Genos [A, O]]]
